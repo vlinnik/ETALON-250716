@@ -1,0 +1,13 @@
+.pybuild
+build
+debhelper-build-stamp
+python3-*
+*.egg-info
+__pycache__
+src/persist.dat
+src/persist.json
+resources/filter-ai.png
+resources/exhaust_.png
+*.blend1
+deleteLater
+resources.rcc

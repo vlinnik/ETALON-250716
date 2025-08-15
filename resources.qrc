@@ -1,0 +1,31 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="green-led.png">resources/green-led.png</file>
+    <file alias="bolt.png">resources/bolt.png</file>
+    <file alias="red-led.png">resources/red-led.png</file>
+    <file alias="too-hard.png">resources/too-hard.png</file>
+    <file alias="locked.png">resources/locked.png</file>
+    <file alias="broken-link.png">resources/broken-link.png</file>
+    <file alias="strength.png">resources/strength.png</file>
+    <file alias="temperature.png">resources/temperature.png</file>
+    <file alias="timer.png">resources/timer.png</file>
+    <file alias="barometr.png">resources/barometr.png</file>
+    <file alias="heavy.png">resources/heavy.png</file>
+    <file alias="siever.png">resources/siever.png</file>
+    <file alias="texture-dashboard.jpeg">resources/texture-dashboard.jpeg</file>
+    <file alias="filter-ai.png">resources/filter-ai.png</file>
+    <file alias="valve.mng">resources/valve.mng</file>
+    <file alias="hand.png">resources/hand.png</file>
+    <file alias="attention.png">resources/attention.png</file>
+    <file alias="siever.png">resources/siever.png</file>
+    <file alias="exhaust.png">resources/exhaust.png</file>
+    <file alias="speed.png">resources/speed.png</file>
+    <file alias="in_container.png">resources/in_container.png</file>
+    <file alias="vconveyor-5m.mng">resources/vconveyor-5m.mng</file>
+    <file alias="conveyor-2m.mng">resources/conveyor-2m.mng</file>
+    <file alias="noria-4h.mng">resources/noria-4h.mng</file>
+    <file alias="conveyor-5m.mng">resources/iconveyor-5m.mng</file>
+    <file alias="conveyor-10m.mng">resources/conveyor-10m.mng</file>
+    <file alias="drum.mng">resources/drum.mng</file>
+  </qresource>
+</RCC>
