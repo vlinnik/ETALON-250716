@@ -1,3 +1,6 @@
 [submodule "pyplc.git"]
 	path = pyplc.git
 	url = https://github.com/vlinnik/pyplc.git
+[submodule "pysca.git"]
+	path = pysca.git
+	url = https://github.com/vlinnik/pysca.git

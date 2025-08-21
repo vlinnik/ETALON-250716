@@ -116,7 +116,43 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
 }
 </string>
   </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="horizontalSpacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QWebEngineView" name="webEngineView">
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="url">
+      <url>
+       <string>http://localhost:3000/d/ce358486-8c2b-4f36-93e1-aee75e3be54c/obzor?orgId=1&amp;refresh=5s</string>
+      </url>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebEngineView</class>
+   <extends>QWidget</extends>
+   <header location="global">QtWebEngineWidgets/QWebEngineView</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../resources.qrc"/>
  </resources>
