@@ -1,5 +1,5 @@
 from pyplc.sfc import SFC,POU
-from pyplc.utils.misc import BLINK
+from pyplc.utils.misc import BLINK,TON
 from typing import Any
 
 class IValveOrCylinder(SFC):
@@ -36,3 +36,18 @@ class IRotation(POU):
     def __call__(self):
         with self:
             self.blink( )
+            
+class IMotor(POU):
+    q = POU.input(False,hidden=True)
+    ison = POU.output(False,hidden=True)
+
+    def __init__(self, q: bool | Any = None, ison:bool | Any  = None, id: str | Any = None, parent: POU | Any = None) -> None:
+        super().__init__(id, parent)
+        self.ison=ison.force if hasattr(ison,'force') else ison
+        self.powered = TON(clk=q, q=IMotor.ison(self),pt=2000)
+        
+        
+    def __call__(self):
+        with self:
+            self.powered( )
+    

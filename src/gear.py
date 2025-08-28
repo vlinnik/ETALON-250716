@@ -20,29 +20,43 @@ class Gear(SFC):
     _lock = POU.input(False,hidden = True)
     q   = POU.output(False, hidden = True)    
     
-    def __init__(self, fault: bool=None, q: bool = None, lock: bool = None, id: str = None, parent: POU = None) -> None:
+    def __init__(self, fault: bool=None, q: bool = None, lock: bool = None, depends: 'Gear'=None, id: str = None, parent: POU = None) -> None:
         super().__init__(id, parent)
         self.state = Gear.IDLE
-        self.ok = True
+        self.allowed = True
         self.fault = fault
         self._lock = lock
         self.q = q
+        self.manual = True
+        self.depends = depends
         self._ctl = RS(reset = lambda: self.off, set = lambda: self.on, q = self.control )
         self.subtasks = (self._ctl, )
     
     def _turnon(self):
-        self.ok = True
+        pass
     
     def _turnoff(self):
-        self.ok = False
+        self.allowed = True
+        
+    def _allowed(self)->bool:
+        if self.depends is not None and not self.manual:
+            if self.depends.state!=Gear.RUN: return False
+            if self.depends.fault: self.allowed = False
+        else:
+            self.allowed = not self._lock
+            
+        if self._lock: self.allowed = False
+        return self.allowed
     
     def control(self,power: bool):
+        if power and not self._allowed(): 
+            self.lock = True
+            return
         self.q = power and not self._lock
         if power and self._lock:
             self.lock = True
         if not power:
             self.lock = False
-            self.ok = True
         
     def main(self):
         self.state = Gear.IDLE
@@ -54,7 +68,7 @@ class Gear(SFC):
         self._turnon( )
         self.log('разгоняемся')
         T = 0 
-        while T<self.startup_t and not self.fault and self.ok and not self._lock:
+        while T<self.startup_t and not self.fault and self._allowed():
             yield from self.pause(1000)
             T+=1
             self.rdy = not self.rdy
@@ -62,18 +76,17 @@ class Gear(SFC):
 
         self.state = Gear.RUN        
         self.log('вышли в режим')
-        yield from self.till(lambda: self.q and not self.fault and self.ok and not self._lock, step = 'в работе')
+        yield from self.till(lambda: self.q and self._allowed() and not self._lock, step = 'в работе')
+        if self.q and self.fault:
+            self.log('аварийный останов')
+        self._turnoff( )
+        self._ctl.unset( )
         self.state = Gear.STOP
         self.busy = False
         self.rdy = False
-        self._turnoff( )
         if self._lock: 
             self.log('отключение по блокировке')
             self.lock = True
-        
-        if self.q:
-            if self.fault:
-                self.log('аварийный останов')
             
         self.q = False
 
@@ -81,8 +94,8 @@ class GearROT(Gear):
     rotating = POU.var(False)
     rot = POU.input(False, hidden = True)
     
-    def __init__(self, fault: bool = None, q: bool = None, lock: bool = None, rot: bool = None, id: str = None, parent: POU = None) -> None:
-        super().__init__(fault=fault, q=q, lock=lock, id=id, parent=parent)
+    def __init__(self, fault: bool = None, q: bool = None, lock: bool = None, rot: bool = None, depends: Gear = None, id: str = None, parent: POU = None) -> None:
+        super().__init__(fault=fault, q=q, lock=lock, depends=depends, id=id, parent=parent)
         self.rot = rot
         self._rotating = TOF(clk = TRIG(clk = lambda: self.rot), q = self.monitor)
         self.subtasks += (self._rotating, )
@@ -102,10 +115,11 @@ class GearFQ(Gear):
         self.fq = self.sp
         
     def _turnoff(self):
+        if self.state==Gear.RUN: self.sp = self.fq
         self.fq = 0
     
-    def __init__(self, fq: bool = None,  fault: bool = None, q: bool = None, lock: bool = None, rot: bool = None, id: str = None, parent: POU = None) -> None:
-        super().__init__(fault=fault, q=q, lock=lock, id=id, parent=parent)
+    def __init__(self, fq: bool = None,  fault: bool = None, q: bool = None, lock: bool = None, rot: bool = None, depends: Gear=None, id: str = None, parent: POU = None) -> None:
+        super().__init__(fault=fault, q=q, lock=lock, depends=depends, id=id, parent=parent)
         self.fq = fq
 
 class GearChain(SFC):

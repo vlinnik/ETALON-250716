@@ -655,6 +655,65 @@ QToolButton
      <widget class="QWidget" name="status_row_7" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout_17">
        <item>
+        <widget class="QLabel" name="powered_1">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Авария ЧП. Возможно потребуется выключить-включить ЧП 9</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../resources.qrc">:/bolt.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="fault_1">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../resources.qrc">:/attention.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QLabel" name="manual_1">
          <property name="enabled">
           <bool>false</bool>
@@ -2961,6 +3020,75 @@ QToolButton
     <string>sys</string>
    </property>
   </widget>
+  <widget class="QCheckBox" name="test">
+   <property name="geometry">
+    <rect>
+     <x>1146</x>
+     <y>520</y>
+     <width>92</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TEST</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="console_1" native="true">
+   <property name="geometry">
+    <rect>
+     <x>1836</x>
+     <y>301</y>
+     <width>32</width>
+     <height>66</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_18">
+    <item>
+     <widget class="QPushButton" name="on_1">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="text">
+       <string>I</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <property name="style" stdset="0">
+       <string>danger</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="off_1">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="text">
+       <string>O</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <property name="style" stdset="0">
+       <string>warning</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <zorder>exhauser</zorder>
   <zorder>conveyor_6</zorder>
   <zorder>conveyor_2</zorder>
@@ -2996,6 +3124,8 @@ QToolButton
   <zorder>start</zorder>
   <zorder>stop</zorder>
   <zorder>state</zorder>
+  <zorder>test</zorder>
+  <zorder>console_1</zorder>
  </widget>
  <customwidgets>
   <customwidget>
