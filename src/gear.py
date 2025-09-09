@@ -15,30 +15,44 @@ class Gear(SFC):
     off = POU.var(False)
     lock = POU.var(False)
     startup_t = POU.var(int(5),persistent=True)
+    test = POU.var(False)       #тест нештатной ситуации
+    rsn  = POU.var(int(0))      #выбор нештатной ситуации
+    manual=POU.var(True,persistent=True) #ручной режим (не учитывать depends)
     
     fault = POU.input(False, hidden = True)
     _lock = POU.input(False,hidden = True)
     q   = POU.output(False, hidden = True)    
     
-    def __init__(self, fault: bool=None, q: bool = None, lock: bool = None, depends: 'Gear'=None, id: str = None, parent: POU = None) -> None:
+    def __init__(self, fault: bool|None=None, q: bool|None = None, lock: bool|None = None, depends: 'Gear|None'=None, id: str|None = None, parent: POU|None = None) -> None:
         super().__init__(id, parent)
         self.state = Gear.IDLE
         self.allowed = True
         self.fault = fault
         self._lock = lock
         self.q = q
-        self.manual = True
         self.depends = depends
         self._ctl = RS(reset = lambda: self.off, set = lambda: self.on, q = self.control )
-        self.subtasks = (self._ctl, )
+        self._tst = FTRIG( clk=lambda: self.test, q = self._test)
+        self.subtasks = (self._ctl, self._tst )
+        self._pass = 0
     
+    def _test(self, on: bool):
+        if on:
+            if self.rsn==0:
+                self.inspect( fault = lambda x: x.force( True if self._pass==0 else None ) )
+            elif self.rsn==1:
+                self.inspect( _lock = lambda x: x.force( True if self._pass==0 else None) )
+        else:
+            self._pass = (self._pass + 1) % 2
+            
     def _turnon(self):
-        pass
+        self.lock = False
     
     def _turnoff(self):
         self.allowed = True
         
     def _allowed(self)->bool:
+        self.allowed = True
         if self.depends is not None and not self.manual:
             if self.depends.state!=Gear.RUN: return False
             if self.depends.fault: self.allowed = False
@@ -57,6 +71,12 @@ class Gear(SFC):
             self.lock = True
         if not power:
             self.lock = False
+            
+    def _begin(self):
+        self.log('entering working mode')
+        
+    def _end(self):
+        self.log('working working mode')
         
     def main(self):
         self.state = Gear.IDLE
@@ -72,13 +92,18 @@ class Gear(SFC):
             yield from self.pause(1000)
             T+=1
             self.rdy = not self.rdy
-        self.rdy = True
-
-        self.state = Gear.RUN        
-        self.log('вышли в режим')
-        yield from self.till(lambda: self.q and self._allowed() and not self._lock, step = 'в работе')
-        if self.q and self.fault:
-            self.log('аварийный останов')
+        if T<self.startup_t:
+            self.rdy = False
+            if self.q and self.fault:
+                self.log('аварийный останов при пуске')
+        else:
+            self.rdy = True
+            self.state = Gear.RUN        
+            self.log('вышли в режим')
+            self._begin()
+            yield from self.till(lambda: self.q and self._allowed() and not self._lock, step = 'в работе')
+            self._end( )
+            
         self._turnoff( )
         self._ctl.unset( )
         self.state = Gear.STOP
@@ -108,7 +133,7 @@ class GearROT(Gear):
 
 class GearFQ(Gear):
     """Базовый класс для конвейеров c ЧП, сита, барабана с частотным управлением"""
-    fq = POU.output(False, hidden = True)
+    fq = POU.output(int(0), hidden = False)
     sp = POU.var(int(32767), persistent=True)  #пусковая частота
     
     def _turnon(self):
@@ -118,7 +143,7 @@ class GearFQ(Gear):
         if self.state==Gear.RUN: self.sp = self.fq
         self.fq = 0
     
-    def __init__(self, fq: bool = None,  fault: bool = None, q: bool = None, lock: bool = None, rot: bool = None, depends: Gear=None, id: str = None, parent: POU = None) -> None:
+    def __init__(self, fq: int|None = None,  fault: bool|None = None, q: bool|None = None, lock: bool|None = None, depends: Gear|None=None, id: str|None = None, parent: POU|None = None) -> None:
         super().__init__(fault=fault, q=q, lock=lock, depends=depends, id=id, parent=parent)
         self.fq = fq
 
@@ -153,7 +178,7 @@ class GearChain(SFC):
             gear.on = True
             yield
             gear.on = False
-            yield from self.till(lambda: gear.state != Gear.RUN and self.state == GearChain.STARTING, max=gear.startup_t*1000+1000, step=f'ожидаем запуска {gear.id}')
+            yield from self.till(lambda: gear.state != Gear.RUN and self.state == GearChain.STARTING, max=5000, step=f'ожидаем запуска {gear.id}')
             if gear.state!= Gear.RUN:
                 self.msg=f'ПРОВЕРЬ {gear.id}'
                 self.log(f'неудачная попытка запуска {gear.id}')

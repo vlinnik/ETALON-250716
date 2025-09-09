@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/">
+    <file alias="loader.png">resources/loader.png</file>
+    <file alias="tune.png">resources/tune.png</file>
     <file alias="green-led.png">resources/green-led.png</file>
     <file alias="bolt.png">resources/bolt.png</file>
     <file alias="red-led.png">resources/red-led.png</file>

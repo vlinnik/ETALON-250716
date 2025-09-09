@@ -50,4 +50,24 @@ class IMotor(POU):
     def __call__(self):
         with self:
             self.powered( )
+
+class IPressure(POU):
+    fq = POU.input(int(0),hidden=True)
+    pressure  = POU.output(int(0),hidden=True)
     
+    def __init__(self, fq, pressure,en, id: str = None, parent: POU = None) -> None:
+        super().__init__(id, parent)
+        self._last = 0
+        self.pressure = pressure.force if hasattr(pressure,'force') else pressure
+        self.fq = fq
+        self.en = en
+        self._integral = 0
+        
+    def __call__(self):
+        with self:
+            if self.en:
+                self.pressure = int(self.fq * 0.4 + self._integral)
+                self._integral += (self.fq - self.pressure)*0.01
+            else:
+                self.pressure = max(self.pressure - 10, 0)
+                self._integral = 0
