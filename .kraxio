@@ -6,7 +6,10 @@
     "downloader": "",
     "miniterm": "",
     "telnet": "",
-    "enumSerials": ""
+    "enumSerials": "",
+    "paths": "/home/vlinnik/.local/lib/python3.12/site-packages/../Scripts/"
   },
-  "project": "PYSCA-250716"
+  "project": "PYSCA-250716",
+  "target": "/dev/ttyUSB1",
+  "is_serial": true
 }

@@ -5,7 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run Simulator",
+            "name": "Runtime",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "gui",
+            "args": ["--opentsdb=127.0.0.1", "--grafana=127.0.0.1","--grafana_key=glsa_H9JUd7lP2fQX2HiADdswfyjH2SoHwe2t_e4e7384e"],
+            "env" : {"PYTHONPYCACHEPREFIX":"${workspaceFolder}/__pycache__"}
+        },
+        {
+            "name": "Simulator",
             "type": "debugpy",
             "request": "launch",
             "module": "gui",

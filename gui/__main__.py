@@ -37,7 +37,7 @@ def main():
     global Home,Siever,Noria,Conv6,Conv4,Conv3,Drum,Exhauser,Conv2,InContainer
     import argparse
     args = argparse.ArgumentParser(sys.argv)
-    args.add_argument('--device', action='store', type=str, default='127.0.0.1', help='IP address of the device')
+    args.add_argument('--device', action='store', type=str, default='192.168.2.10', help='IP address of the device')
     args.add_argument('--simulator', action='store_true', default=False, help='Same as --device 127.0.0.1')
     ns = args.parse_known_args()[0]
     if ns.simulator:
