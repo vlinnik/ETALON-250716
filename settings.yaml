@@ -1,0 +1,19 @@
+main:
+  workdir:     .
+  conf:        ./default.scada
+  simulator:  true
+  modules:
+    - gui.__main__
+
+navbar:
+  title: 'АСУ ИННЕРЕ-250716 (c) 2025, ООО "ЭТАЛОН-КОМ"'
+  pages:
+    - ui/Home.ui
+    - ui/Dashboard.ui
+
+devices:
+  - name: PLC
+    type: PYPLC
+    args:
+      device: 127.0.0.1
+      scan: 100

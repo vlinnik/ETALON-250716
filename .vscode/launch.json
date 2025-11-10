@@ -18,7 +18,8 @@
             "request": "launch",
             "module": "gui",
             "args": ["--simulator","--opentsdb=127.0.0.1", "--grafana=127.0.0.1","--grafana_key=glsa_H9JUd7lP2fQX2HiADdswfyjH2SoHwe2t_e4e7384e"],
-            "env" : {"PYTHONPYCACHEPREFIX":"${workspaceFolder}/__pycache__"}
+            "env" : {"PYTHONPYCACHEPREFIX":"${workspaceFolder}/__pycache__"},
+            "justMyCode": false
         },
         {
             "name": "Run Python File",
@@ -27,6 +28,16 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "env" : {"PYTHONPYCACHEPREFIX":"${workspaceFolder}/__pycache__"}
+        },
+        {
+            "name": "Use settings.yaml",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pysca.cli",
+            "args": ["--settings","settings.yaml"],
+            "env" : {"PYTHONPYCACHEPREFIX":"${workspaceFolder}/__pycache__"},
+            "justMyCode": false
         }
+
     ]
 }

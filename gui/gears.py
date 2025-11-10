@@ -1,6 +1,6 @@
-from AnyQt.QtWidgets import QWidget,QDialog,QLabel,QPushButton
-from AnyQt.QtGui import QCloseEvent,QShowEvent
-from AnyQt.QtCore import QSettings,QPoint
+from qtpy.QtWidgets import QWidget,QDialog,QLabel,QPushButton
+from qtpy.QtGui import QCloseEvent,QShowEvent
+from qtpy.QtCore import QSettings,QPoint
 from pysca.helpers import user_window
 from typing import cast
 

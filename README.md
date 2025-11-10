@@ -36,3 +36,12 @@ PYQTDESIGNERPATH=. designer
 ```
 
 в designer должен быть установлен libpyqt5/libpyqt5 
+
+# TODO
+
+В процессе подготовки к отгрузке, при проверке работы через pysca --settings settings.yaml выявлено
+
+- неочевидно как сделать окна по шаблонам (Siever/GearROT) и чтобы можно было их использовать из Событий
+- что надо добавлять MODULE='gui' и потом gui.Siever.show()
+- что можно переопределить on_load/on_start в модуле загружаемом из settings.yaml:main->modules
+- нет общего пространства чтобы достать Home/Dashboard, которые созданы через settings.yaml:navbar->pages
