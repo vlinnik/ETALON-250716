@@ -82,6 +82,8 @@ def on_start():
     Exhauser = EXHAUSER(Home,title='Батарейный фильтр (8)')
     Conv2 = GearFQ(Home,title='Питатель (2)', prefix='CONVEYOR_2',en='FQ_EN_2')
     InContainer = INCONTAINER(Home,title='Приемный (1)',en='FQ_EN_1')
+    navbar.append(DASHBOARD(title='Пуск'))
+    navbar.append(DASHBOARD(title='Работа',url='http://localhost:3000/d/a0819563-8b3a-41fd-b0c7-20a11ed09d68/rabota?orgId=1&refresh=5s&kiosk'))
     
 if __name__=='__main__':
     _ = QApplication(sys.argv)

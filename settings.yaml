@@ -2,6 +2,10 @@ main:
   workdir:     .
   conf:        ./default.scada
   simulator:  true
+  opentsdb: 127.0.0.1
+  grafana: 127.0.0.1
+  # grafana_key: glsa_seBJY5YcvEip7dVLnFwqSm4ULohZVAgQ_890892c0
+  grafana_key: glsa_IMb3JM7mkqdBalAMPz6lhi1rKm9JxGfT_18645892
   modules:
     - gui.__main__
 
@@ -9,7 +13,6 @@ navbar:
   title: 'АСУ ИННЕРЕ-250716 (c) 2025, ООО "ЭТАЛОН-КОМ"'
   pages:
     - ui/Home.ui
-    - ui/Dashboard.ui
 
 devices:
   - name: PLC

@@ -35,7 +35,7 @@
             "request": "launch",
             "module": "pysca.cli",
             "args": ["--settings","settings.yaml"],
-            "env" : {"PYTHONPYCACHEPREFIX":"${workspaceFolder}/__pycache__"},
+            "env" : {"PYTHONPYCACHEPREFIX":"${workspaceFolder}/__pycache__","QT_API":"pyqt6"},
             "justMyCode": false
         }
 
