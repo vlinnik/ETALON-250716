@@ -20,7 +20,6 @@ Exhauser: EXHAUSER
 Conv2: GearFQ
 InContainer: GearFQ
 
-
 class DASHBOARD( user_window( 'ui/Dashboard.ui',QWidget ) ):
     webEngineView : QWebEngineView
     
@@ -75,12 +74,12 @@ def on_start():
     Home = navbar.instance
     Siever = SIEVER(Home,title='Вибро-сито (9)')
     Noria = NORIA(Home,title='Нория (7)')
-    Conv6 = GearROT(Home,title='Питатель (6)',prefix='CONVEYOR_6',rot='FEED_ROT_6')
+    Conv6 = GearFQ(Home,title='Питатель (6)',prefix='CONVEYOR_6',rot='FEED_ROT_6',en='FEED_ON_6')
     Drum  = DRUM(Home,title='Сушильный барабан (5)')
     Conv4 = GearROT(Home,title='Питатель (4)',prefix='CONVEYOR_4',rot='FEED_ROT_4')
-    Conv3 = GearROT(Home,title='Питатель (3)',prefix='CONVEYOR_3',rot='FEED_ROT_3')
+    Conv3 = GearFQ(Home,title='Питатель (3)',prefix='CONVEYOR_3',rot='FEED_ROT_3',en='FEED_ON_3')
     Exhauser = EXHAUSER(Home,title='Батарейный фильтр (8)')
-    Conv2 = GearFQ(Home,title='Питатель (2)', prefix='CONVEYOR_2',en='FQ_EN_2')
+    Conv2 = GearFQ(Home,title='Питатель (2)', prefix='CONVEYOR_2',en='FQ_EN_2',rot='FEED_ROT_2')
     InContainer = INCONTAINER(Home,title='Приемный (1)',en='FQ_EN_1')
     navbar.append(DASHBOARD(title='Пуск'))
     navbar.append(DASHBOARD(title='Работа',url='http://localhost:3000/d/a0819563-8b3a-41fd-b0c7-20a11ed09d68/rabota?orgId=1&refresh=5s&kiosk'))

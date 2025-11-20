@@ -847,7 +847,7 @@ QToolButton
   <widget class="QGroupBox" name="panel_conveyor_3">
    <property name="geometry">
     <rect>
-     <x>560</x>
+     <x>630</x>
      <y>110</y>
      <width>270</width>
      <height>126</height>
@@ -860,6 +860,63 @@ QToolButton
     <string>vodoley</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_7">
+    <item>
+     <widget class="QWidget" name="widget_14" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout_23">
+       <item alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="label_20">
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../resources.qrc">:/speed.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_22">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Скорость</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+         <property name="style" stdset="0">
+          <string>hint</string>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignRight">
+        <widget class="QLabel" name="label_23">
+         <property name="text">
+          <string>10 %</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="style" stdset="0">
+          <string>hint</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item>
      <widget class="QWidget" name="status_row_5" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout_16">
@@ -888,6 +945,34 @@ QToolButton
          </property>
          <property name="pixmap">
           <pixmap resource="../resources.qrc">:/bolt.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="emergency_9">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../resources.qrc">:/attention.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1004,7 +1089,7 @@ QToolButton
     <string>vodoley</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_9">
-    <item>
+    <item alignment="Qt::AlignBottom">
      <widget class="QWidget" name="status_row_6" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout_18">
        <item>
@@ -1032,6 +1117,34 @@ QToolButton
          </property>
          <property name="pixmap">
           <pixmap resource="../resources.qrc">:/bolt.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="emergency_10">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../resources.qrc">:/attention.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1504,10 +1617,10 @@ QToolButton
   <widget class="QGroupBox" name="panel_conveyor_6">
    <property name="geometry">
     <rect>
-     <x>1010</x>
-     <y>866</y>
+     <x>960</x>
+     <y>811</y>
      <width>270</width>
-     <height>70</height>
+     <height>125</height>
     </rect>
    </property>
    <property name="title">
@@ -1517,6 +1630,63 @@ QToolButton
     <string>vodoley</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QWidget" name="widget_17" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout_24">
+       <item alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="label_24">
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../resources.qrc">:/speed.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_35">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Скорость</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+         <property name="style" stdset="0">
+          <string>hint</string>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignRight">
+        <widget class="QLabel" name="label_36">
+         <property name="text">
+          <string>10 %</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="style" stdset="0">
+          <string>hint</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item>
      <widget class="QWidget" name="status_row_1" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout">
@@ -2042,9 +2212,9 @@ QToolButton
    <property name="geometry">
     <rect>
      <x>1560</x>
-     <y>870</y>
+     <y>818</y>
      <width>270</width>
-     <height>70</height>
+     <height>122</height>
     </rect>
    </property>
    <property name="title">
@@ -2473,7 +2643,7 @@ QToolButton
   <widget class="Animation" name="conveyor_6">
    <property name="geometry">
     <rect>
-     <x>770</x>
+     <x>750</x>
      <y>740</y>
      <width>658</width>
      <height>174</height>

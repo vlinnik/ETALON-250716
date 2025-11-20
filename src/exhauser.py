@@ -12,6 +12,7 @@ class PID:
         self._last_error = 0.0
         self._integral = 0.0
         self._last_time = None
+        self._bias = 0
 
     def setup(self, Kp, Ki, Kd):
         self.Kp = Kp  # Пропорциональный коэффициент
@@ -24,7 +25,12 @@ class PID:
         self._last_error = 0
         self._integral = 0
         self._initialized = False
-
+        
+    def bias(self,bias: int):
+        self._integral = 0
+        self._bias = bias
+        self._last_error = 0
+        
     def compute(self, sp:int, pv:int, dt:int=100):
         self.sp = sp
         error = sp - pv
@@ -35,11 +41,12 @@ class PID:
                 derivative = (error - self._last_error) / dt/1000
                 self._integral += error * dt/1000
 
+        sign = 1 if self.Kp>=0 else -1 
         output = (
             self.Kp * error +
-            self.Ki * self._integral +
-            self.Kd * derivative
-        )
+            self.Ki * sign * self._integral +
+            self.Kd * sign * derivative
+        ) + self._bias
 
         # Ограничение выходного сигнала
         min_out, max_out = self.limits
@@ -53,7 +60,6 @@ class PID:
         self._initialized = True
 
         return int(output)
-
 
 class Exhauser(GearFQ):
     w_1 = POU.var(int(10),persistent=True)  #для интерфейса оператора целевые значения для температур
@@ -76,7 +82,7 @@ class Exhauser(GearFQ):
     open_2 = POU.output(False,hidden=True)
     
     def __init__(self, pressure: int|None = None,open_1:bool|None = None,open_2:bool|None=None, fq: int|None = None, fault: bool|None = None, q: bool|None = None, lock: bool|None = None,  id: str|None = None, parent: POU|None = None) -> None:
-        super().__init__(fq, fault, q, lock, id=id, parent=parent)
+        super().__init__(rot=False, fq=fq, fault=fq, q=q, lock=lock, id=id, parent=parent)
         self.open_1 = open_1
         self.open_2 = open_2
         self.pressure = pressure
@@ -98,7 +104,11 @@ class Exhauser(GearFQ):
         self.pid.reset( )
         while True:
             self.pid.setup(self.kp,self.ki,self.kd)
-            self.fq = self.pid.compute(self.target, self.pressure, 100 )
+            if not self.manual:
+                self.fq = self.pid.compute(self.target, self.pressure, 100 )
+            else:
+                self.target = self.pressure
+                self.pid.bias(self.fq)
             yield
             
     def _cleaner(self):

@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>388</width>
+    <width>404</width>
     <height>504</height>
    </rect>
   </property>
@@ -220,10 +220,10 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
              <string> [Па]</string>
             </property>
             <property name="minimum">
-             <double>-2000.000000000000000</double>
+             <double>-5000.000000000000000</double>
             </property>
             <property name="maximum">
-             <double>2000.000000000000000</double>
+             <double>5000.000000000000000</double>
             </property>
            </widget>
           </item>
@@ -759,7 +759,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
              <string> [сек]</string>
             </property>
             <property name="maximum">
-             <number>100</number>
+             <number>10000</number>
             </property>
            </widget>
           </item>
@@ -914,7 +914,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
              <string> [сек]</string>
             </property>
             <property name="maximum">
-             <number>100</number>
+             <number>10000</number>
             </property>
            </widget>
           </item>

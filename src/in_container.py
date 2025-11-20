@@ -35,7 +35,7 @@ class InContainer(GearFQ):
     hold    =POU.var(bool(False))
     
     def __init__(self, *, raw_m: int,scrn_m:int, pusher_1:bool , pusher_2:bool , above_1: bool, above_2:bool , fq: int , fault: bool , q: bool , lock: bool | None = None, depends: Gear | None = None, id: str | None = None, parent: POU | None = None) -> None:
-        super().__init__(fq=fq, fault=fault, q=q, lock=lock, depends=depends, id=id, parent=parent)
+        super().__init__( fault=fault, q=q, lock=lock, depends=depends, id=id, parent=parent)
         self.raw_m = raw_m
         self.scrn_m = scrn_m
         self.pusher_1 = pusher_1
@@ -48,7 +48,7 @@ class InContainer(GearFQ):
         
     def monitor(self):
         self.weight = self.raw_m/65535*self.mmax + self.a 
-
+    
         if self.scrn_m>=self.overload*655.35 and self.q and not self.hold:
             self.hold = True
             if self.fq!=self.sp:

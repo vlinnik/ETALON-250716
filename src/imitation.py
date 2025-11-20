@@ -32,10 +32,12 @@ class IRotation(POU):
         super().__init__(id, parent)
         self.rot=rot.force if hasattr(rot,'force') else rot
         self.blink = BLINK(enable = q,q = IRotation.rot(self), t_on = 100, t_off = 500 )
+        self.en = True
         
     def __call__(self):
         with self:
-            self.blink( )
+            if self.en:
+                self.blink( )
             
 class IMotor(POU):
     q = POU.input(False,hidden=True)
@@ -66,7 +68,7 @@ class IPressure(POU):
     def __call__(self):
         with self:
             if self.en:
-                self.pressure = int(self.fq * 0.4 + self._integral)
+                self.pressure = int(self.fq * -0.4 + self._integral)
                 self._integral += (self.fq - self.pressure)*0.01
             else:
                 self.pressure = max(self.pressure - 10, 0)

@@ -2,6 +2,7 @@ from pyplc.sfc import SFC,POU
 from pyplc.utils.latch import RS
 from pyplc.utils.trig import TRIG,FTRIG,RTRIG
 from pyplc.utils.misc import TOF
+from typing import Callable
 
 class Gear(SFC):
     """Базовый класс для конвейеров, норий, сита, барабана"""
@@ -25,6 +26,7 @@ class Gear(SFC):
     
     def __init__(self, fault: bool|None=None, q: bool|None = None, lock: bool|None = None, depends: 'Gear|None'=None, id: str|None = None, parent: POU|None = None) -> None:
         super().__init__(id, parent)
+        self.ok = False
         self.state = Gear.IDLE
         self.allowed = True
         self.fault = fault
@@ -55,7 +57,7 @@ class Gear(SFC):
         self.allowed = True
         if self.depends is not None and not self.manual:
             if self.depends.state!=Gear.RUN: return False
-            if self.depends.fault: self.allowed = False
+            if not self.depends.ok: self.allowed = False
         else:
             self.allowed = not self._lock
             
@@ -74,9 +76,11 @@ class Gear(SFC):
             
     def _begin(self):
         self.log('entering working mode')
+        self.ok = True
         
     def _end(self):
         self.log('working working mode')
+        self.ok = False
         
     def main(self):
         self.state = Gear.IDLE
@@ -88,7 +92,7 @@ class Gear(SFC):
         self._turnon( )
         self.log('разгоняемся')
         T = 0 
-        while T<self.startup_t and not self.fault and self._allowed():
+        while T<self.startup_t and self._allowed():
             yield from self.pause(1000)
             T+=1
             self.rdy = not self.rdy
@@ -119,19 +123,21 @@ class GearROT(Gear):
     rotating = POU.var(False)
     rot = POU.input(False, hidden = True)
     
-    def __init__(self, fault: bool = None, q: bool = None, lock: bool = None, rot: bool = None, depends: Gear = None, id: str = None, parent: POU = None) -> None:
+    def __init__(self, fault: bool = None, q: bool = None, lock: bool = None, rot: bool|None|Callable[[],bool] = None, depends: Gear = None, id: str = None, parent: POU = None) -> None:
         super().__init__(fault=fault, q=q, lock=lock, depends=depends, id=id, parent=parent)
         self.rot = rot
-        self._rotating = TOF(clk = TRIG(clk = lambda: self.rot), q = self.monitor)
+        self._rotating = TOF(clk = TRIG(clk = lambda: self.rot), q = self.is_rotating,pt=4000)
         self.subtasks += (self._rotating, )
 
-    def monitor(self, rot: bool):
+    def is_rotating(self, rot: bool):
         self.rotating = rot
         if not rot and self.q:
             self.ok = False
             self.log('ошибка: нет вращения')
+        else:
+            self.ok = True
 
-class GearFQ(Gear):
+class GearFQ(GearROT):
     """Базовый класс для конвейеров c ЧП, сита, барабана с частотным управлением"""
     fq = POU.output(int(0), hidden = False)
     sp = POU.var(int(32767), persistent=True)  #пусковая частота
@@ -143,8 +149,8 @@ class GearFQ(Gear):
         if self.state==Gear.RUN: self.sp = self.fq
         self.fq = 0
     
-    def __init__(self, fq: int|None = None,  fault: bool|None = None, q: bool|None = None, lock: bool|None = None, depends: Gear|None=None, id: str|None = None, parent: POU|None = None) -> None:
-        super().__init__(fault=fault, q=q, lock=lock, depends=depends, id=id, parent=parent)
+    def __init__(self, rot: bool|None|Callable[[],bool]=None,fq: int|None = None,  fault: bool|None = None, q: bool|None = None, lock: bool|None = None, depends: Gear|None=None, id: str|None = None, parent: POU|None = None) -> None:
+        super().__init__(rot=rot,fault=fault, q=q, lock=lock, depends=depends, id=id, parent=parent)
         self.fq = fq
 
 class GearChain(SFC):
