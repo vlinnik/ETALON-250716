@@ -1,7 +1,7 @@
 main:
   workdir:     .
   conf:        ./default.scada
-  simulator:  true
+  # simulator:  true
   opentsdb: 127.0.0.1
   grafana: 127.0.0.1
   # grafana_key: glsa_seBJY5YcvEip7dVLnFwqSm4ULohZVAgQ_890892c0
@@ -18,5 +18,6 @@ devices:
   - name: PLC
     type: PYPLC
     args:
-      device: 127.0.0.1
+      # device: 127.0.0.1
+      device: 192.168.3.10
       scan: 100
