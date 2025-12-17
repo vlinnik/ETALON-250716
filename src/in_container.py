@@ -64,12 +64,18 @@ class InContainer(GearFQ):
     def _balance(self):
         while True:
             m = self.weight
-            yield from self.until(lambda: m+self.db<self.weight,max=5000)
+            bottom = self.weight
+            up = self.weight
+            for _ in self.until(lambda: m + self.db < self.weight,max=5000):
+                yield
+                bottom = min(self.weight,bottom)
+                up = max(self.weight,up)
+            # yield from self.until(lambda: m+self.db<self.weight,max=5000
             dm = self.weight - m
             if dm>0: 
-                self.debet+=dm
+                self.debet += (up - bottom)
             else:
-                self.credit-=dm
+                self.credit-= dm
 
     def _performance(self):
         performance=[ ]

@@ -313,7 +313,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
          <bool>true</bool>
         </property>
         <property name="style" stdset="0">
-         <string>danger</string>
+         <string>warning</string>
         </property>
        </widget>
       </item>
@@ -335,7 +335,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
          <bool>true</bool>
         </property>
         <property name="style" stdset="0">
-         <string>warning</string>
+         <string>danger</string>
         </property>
        </widget>
       </item>
