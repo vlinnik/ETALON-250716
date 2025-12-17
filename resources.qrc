@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/">
+    <file alias="sum.png">resources/sum.png</file>
     <file alias="bad.png">resources/thumb-down.png</file>
     <file alias="ok.png">resources/thumb-up.png</file>
     <file alias="loader.png">resources/loader.png</file>

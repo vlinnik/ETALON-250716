@@ -34,6 +34,7 @@ class DASHBOARD( user_window( 'ui/Dashboard.ui',QWidget ) ):
 
 def main():
     import pysca.navbar as navbar
+    from .customization import Home as HomeBase
     global Home,Siever,Noria,Conv6,Conv4,Conv3,Drum,Exhauser,Conv2,InContainer
     import argparse
     args = argparse.ArgumentParser(sys.argv)
@@ -49,7 +50,7 @@ def main():
     app.devices['PLC'] = dev
     
     # с использованием navbar
-    Home = app.window('ui/Home.ui')
+    Home = app.window('ui/Home.ui',baseinstance=HomeBase())
     navbar.append(Home)       
     navbar.append(DASHBOARD(title='Пуск'))
     navbar.append(DASHBOARD(title='Работа',url='http://localhost:3000/d/a0819563-8b3a-41fd-b0c7-20a11ed09d68/rabota?orgId=1&refresh=5s&kiosk'))
@@ -83,6 +84,9 @@ def on_start():
     InContainer = INCONTAINER(Home,title='Приемный (1)',en='FQ_EN_1')
     navbar.append(DASHBOARD(title='Пуск'))
     navbar.append(DASHBOARD(title='Работа',url='http://localhost:3000/d/a0819563-8b3a-41fd-b0c7-20a11ed09d68/rabota?orgId=1&refresh=5s&kiosk'))
+    navbar.instance.centralWidget().widget(0).setup()
+    navbar.instance.centralWidget().setObjectName('centralwidget')
+    navbar.instance.centralWidget().setStyleSheet(navbar.instance.centralWidget().widget(0).styleSheet())
     
 if __name__=='__main__':
     _ = QApplication(sys.argv)

@@ -30,11 +30,11 @@
             "env" : {"PYTHONPYCACHEPREFIX":"${workspaceFolder}/__pycache__"}
         },
         {
-            "name": "Use settings.yaml",
+            "name": "Batch-Mode",
             "type": "debugpy",
             "request": "launch",
             "module": "pysca.cli",
-            "args": ["--settings","settings.yaml"],
+            "args": ["--settings","settings.yaml","-w","${workspaceFolder}"],
             "env" : {"PYTHONPYCACHEPREFIX":"${workspaceFolder}/__pycache__","QT_API":"pyqt6"},
             "justMyCode": false
         }

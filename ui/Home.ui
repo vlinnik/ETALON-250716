@@ -469,8 +469,8 @@ QToolButton
     <rect>
      <x>1560</x>
      <y>144</y>
-     <width>274</width>
-     <height>297</height>
+     <width>269</width>
+     <height>339</height>
     </rect>
    </property>
    <property name="title">
@@ -639,6 +639,66 @@ QToolButton
         <widget class="QLabel" name="prefomance">
          <property name="text">
           <string>10 т/ч</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="style" stdset="0">
+          <string>hint</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget_20" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout_27">
+       <item alignment="Qt::AlignLeft">
+        <widget class="QLabel" name="iconTotal">
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="contextMenuPolicy">
+          <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="../resources.qrc">:/sum.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="hint_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Выпуск</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+         <property name="style" stdset="0">
+          <string>hint</string>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignRight">
+        <widget class="QLabel" name="total_q">
+         <property name="text">
+          <string>10 т</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1406,7 +1466,7 @@ QToolButton
           </sizepolicy>
          </property>
          <property name="text">
-          <string>На входе</string>
+          <string>Песок</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1463,7 +1523,7 @@ QToolButton
           </sizepolicy>
          </property>
          <property name="text">
-          <string>На выходе</string>
+          <string>Горелка</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -2444,8 +2504,8 @@ QToolButton
    <property name="geometry">
     <rect>
      <x>1559</x>
-     <y>471</y>
-     <width>271</width>
+     <y>500</y>
+     <width>268</width>
      <height>185</height>
     </rect>
    </property>
@@ -2782,7 +2842,7 @@ QToolButton
    <property name="geometry">
     <rect>
      <x>1620</x>
-     <y>610</y>
+     <y>670</y>
      <width>177</width>
      <height>175</height>
     </rect>
@@ -2918,6 +2978,14 @@ QToolButton
     <string>sys</string>
    </property>
   </widget>
+  <action name="actionReset">
+   <property name="text">
+    <string>Сброcить</string>
+   </property>
+   <property name="toolTip">
+    <string>Сбросить накопленное значение</string>
+   </property>
+  </action>
   <zorder>siever</zorder>
   <zorder>exhauser</zorder>
   <zorder>conveyor_6</zorder>

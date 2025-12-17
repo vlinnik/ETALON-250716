@@ -73,3 +73,19 @@ class IPressure(POU):
             else:
                 self.pressure = max(self.pressure - 10, 0)
                 self._integral = 0
+                
+class IWeight(POU):
+    unload = POU.input(False,hidden=True)
+    q      = POU.output(0,hidden=True)
+
+    def __init__(self, q: int | Any = None, unload:bool | Any  = None, id: str | Any = None, parent: POU | Any = None) -> None:
+        super().__init__(id, parent)
+        self.q      = q.force if hasattr(q,'force') else q
+        self.unload = unload
+        self.speed  = 10
+        
+        
+    def __call__(self):
+        with self:
+            if self.unload and self.q>0:
+                self.q -= min(self.q,self.speed)

@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>374</width>
-    <height>396</height>
+    <width>352</width>
+    <height>345</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -133,103 +133,6 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
    <string>SIEVER</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="2" column="0" colspan="2">
-    <widget class="QWidget" name="row_4" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
-       <widget class="QLabel" name="icon_sp_4">
-        <property name="minimumSize">
-         <size>
-          <width>32</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>32</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="../resources.qrc">:/hand.png</pixmap>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="hint_fq_3">
-        <property name="text">
-         <string>РУЧНОЙ РЕЖИМ:</string>
-        </property>
-        <property name="style" stdset="0">
-         <string>hint</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox">
-        <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="7" column="0" colspan="2">
-    <widget class="QWidget" name="row_6" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout_6">
-      <item>
-       <widget class="QPushButton" name="test_fault">
-        <property name="text">
-         <string>АВАРИЯ</string>
-        </property>
-        <property name="rsn" stdset="0">
-         <number>0</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="test_income">
-        <property name="text">
-         <string>ПРИХОД</string>
-        </property>
-        <property name="rsn" stdset="0">
-         <number>1</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="test_outcome">
-        <property name="text">
-         <string>РАСХОД</string>
-        </property>
-        <property name="rsn" stdset="0">
-         <number>2</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="test_overload">
-        <property name="text">
-         <string>ЗАВАЛ</string>
-        </property>
-        <property name="rsn" stdset="0">
-         <number>2</number>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
    <item row="1" column="0" colspan="2">
     <widget class="Line" name="line">
      <property name="orientation">
@@ -237,7 +140,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
      </property>
     </widget>
    </item>
-   <item row="4" column="1" rowspan="3" alignment="Qt::AlignVCenter">
+   <item row="4" column="1" rowspan="3" alignment="Qt::AlignTop">
     <widget class="QFrame" name="console">
      <property name="minimumSize">
       <size>
@@ -296,41 +199,6 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
         </property>
         <property name="style" stdset="0">
          <string>warning</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="0" column="0" colspan="2">
-    <widget class="QWidget" name="row_1" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="hint_name">
-        <property name="text">
-         <string>ПОЗИЦИЯ:</string>
-        </property>
-        <property name="style" stdset="0">
-         <string>hint</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="name">
-        <property name="minimumSize">
-         <size>
-          <width>100</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>&lt;не указано&gt;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-        <property name="style" stdset="0">
-         <string>hint</string>
         </property>
        </widget>
       </item>
@@ -1088,6 +956,92 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
        </item>
       </layout>
      </widget>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QWidget" name="row_1" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="hint_name">
+        <property name="text">
+         <string>ПОЗИЦИЯ:</string>
+        </property>
+        <property name="style" stdset="0">
+         <string>hint</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="name">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>&lt;не указано&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="style" stdset="0">
+         <string>hint</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QWidget" name="row_4" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="icon_sp_4">
+        <property name="minimumSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../resources.qrc">:/hand.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="hint_fq_3">
+        <property name="text">
+         <string>РУЧНОЙ РЕЖИМ:</string>
+        </property>
+        <property name="style" stdset="0">
+         <string>hint</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox">
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>

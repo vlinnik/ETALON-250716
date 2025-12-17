@@ -1,7 +1,6 @@
 #Ниже идет Ваша программа
-from typing import Any,Type,Dict
 from pyplc.platform import plc,plc as hw
-from pyplc.utils.misc import TOF,TON
+from pyplc.utils.misc import TON
 # from in_container import InContainer
 from gear import GearROT as Noria, GearROT as Conveyor, GearFQ as Siever,  GearChain, GearFQ as ConveyorFQ
 from drum import Drum
@@ -9,10 +8,10 @@ from exhauser import Exhauser
 from in_container import InContainer
 from sys import platform
 from collections import namedtuple
-from pyplc.utils.bindable import Property
-from pyplc.utils.context import Context
+from typing import TYPE_CHECKING
 
-if platform == 'vscode': # never realy used, only for auto-completion
+
+if TYPE_CHECKING: # never realy used, only for auto-completion
     PLC = namedtuple('PLC', ['IN_CONT_M_1','VIB_SCRN_M_1','VIB_SIEVE_M_9','DRUM_T_5A','DRUM_T_5B','DRUM_T_5C','FILTER_P_9','VIBR_FQ_1','FEED_FQ_2','DRUM_FQ_5','FILTER_FQ_8','SIEVE_FQ_9','EMERGENCY_2','EMERGENCY_3','EMERGENCY_4','EMERGENCY_5','EMERGENCY_6','EMERGENCY_7','FEED_ROT_2','FEED_ROT_3','FEED_ROT_4','FEED_ROT_6','NORI_ROT_7','PUSHER_ON_BOT_1A','PUSHER_ON_BOT_1B','PUSHER_ON_TOP_1A','PUSHER_ON_TOP_1B','NORI_TORN_7','FAULT_FQ_1','FAULT_FQ_2','FAULT_FQ_5','FAULT_FQ_8','FAULT_FQ_9','FEED_ISON_3','FEED_ISON_4','FEED_ISON_6','PUSHER_ON_1A','PUSHER_ON_1B','FQ_EN_1','FQ_EN_2','FEED_ON_3','FEED_ON_4','FQ_EN_5','FEED_ON_6','NORI_ON_7','FILTER_EN_8','SIEVE_EN_9','UNLOAD_OPEN_8A','UNLOAD_OPEN_8B'])
     hw = PLC()
 
@@ -37,7 +36,7 @@ factory = GearChain( gears=( siever, noria,conveyor_6 , conveyor_4, conveyor_3, 
 instances = (in_container, siever, exhauser, noria, conveyor_6,drum_5,conveyor_4, conveyor_3,conveyor_2, factory)
 
 if platform == 'linux':
-    from imitation import IValveOrCylinder,IRotation,IMotor,IPressure
+    from imitation import IValveOrCylinder,IRotation,IMotor,IPressure,IWeight
     ipusher_1 = IValveOrCylinder(open=hw.PUSHER_ON_1A, closed=hw.PUSHER_ON_TOP_1A)
     ipusher_2 = IValveOrCylinder(open=hw.PUSHER_ON_1B, closed=hw.PUSHER_ON_TOP_1B)
     irot_7    = IRotation(q = hw.NORI_ON_7, rot = hw.NORI_ROT_7 )
@@ -53,9 +52,11 @@ if platform == 'linux':
     ifq_5     = IMotor(q=hw.FQ_EN_5, ison = hw.FAULT_FQ_5)
     ifq_8     = IMotor(q=hw.FILTER_EN_8, ison = hw.FAULT_FQ_8)
     ifq_9     = IMotor(q=hw.SIEVE_EN_9, ison = hw.FAULT_FQ_9)
+    icont_m_1 = IWeight(q=hw.IN_CONT_M_1, unload = hw.FQ_EN_1)
+    icont_m_1.q = 65535
     ipressure = IPressure(fq = hw.FILTER_FQ_8,pressure=hw.FILTER_P_9,en=hw.FILTER_EN_8 )
     
-    instances += (ipusher_1, ipusher_2, irot_7,irot_6,irot_4, irot_3,irot_2,ifeed_6,ifeed_4,ifeed_3,ipressure,ifq_2,ifq_5,ifq_1,ifq_9,ifq_8) 
+    instances += (ipusher_1, ipusher_2, irot_7,irot_6,irot_4, irot_3,irot_2,ifeed_6,ifeed_4,ifeed_3,ipressure,ifq_2,ifq_5,ifq_1,ifq_9,ifq_8,icont_m_1) 
     
 
 plc.run( instances=instances, ctx=globals() )

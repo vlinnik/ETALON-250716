@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>311</width>
-    <height>343</height>
+    <height>292</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -122,45 +122,6 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
    <string>SIEVER</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="7" column="0" colspan="2">
-    <widget class="QWidget" name="row_6" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout_6">
-      <item>
-       <widget class="QPushButton" name="test_fault">
-        <property name="text">
-         <string>АВАРИЯ</string>
-        </property>
-        <property name="rsn" stdset="0">
-         <number>0</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="test_lock">
-        <property name="text">
-         <string>ТРОС</string>
-        </property>
-        <property name="rsn" stdset="0">
-         <number>0</number>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
    <item row="0" column="0" colspan="2">
     <widget class="QWidget" name="row_1" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
@@ -254,76 +215,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
      </layout>
     </widget>
    </item>
-   <item row="5" column="0">
-    <widget class="QWidget" name="row_3" native="true">
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <item>
-       <widget class="QLabel" name="icon_sp_3">
-        <property name="minimumSize">
-         <size>
-          <width>32</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>32</width>
-          <height>32</height>
-         </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="../resources.qrc">:/timer.png</pixmap>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="hint_fq_2">
-        <property name="text">
-         <string>ОСТАНОВ</string>
-        </property>
-        <property name="style" stdset="0">
-         <string>hint</string>
-        </property>
-       </widget>
-      </item>
-      <item alignment="Qt::AlignRight">
-       <widget class="QSpinBox" name="fq_2">
-        <property name="minimumSize">
-         <size>
-          <width>100</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="buttonSymbols">
-         <enum>QAbstractSpinBox::NoButtons</enum>
-        </property>
-        <property name="suffix">
-         <string> [сек]</string>
-        </property>
-        <property name="maximum">
-         <number>100</number>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="3" column="1" rowspan="4" alignment="Qt::AlignVCenter">
+   <item row="3" column="1" rowspan="4" alignment="Qt::AlignTop">
     <widget class="QFrame" name="console">
      <property name="minimumSize">
       <size>
@@ -569,6 +461,75 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
        </item>
       </layout>
      </widget>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QWidget" name="row_3" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="icon_sp_3">
+        <property name="minimumSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>32</width>
+          <height>32</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../resources.qrc">:/timer.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="hint_fq_2">
+        <property name="text">
+         <string>ОСТАНОВ</string>
+        </property>
+        <property name="style" stdset="0">
+         <string>hint</string>
+        </property>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignRight">
+       <widget class="QSpinBox" name="fq_2">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="buttonSymbols">
+         <enum>QAbstractSpinBox::NoButtons</enum>
+        </property>
+        <property name="suffix">
+         <string> [сек]</string>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item row="6" column="0">

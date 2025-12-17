@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>363</width>
+    <width>312</width>
     <height>236</height>
    </rect>
   </property>
@@ -429,16 +429,6 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
         </property>
         <property name="style" stdset="0">
          <string>hint</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="test_fault">
-        <property name="text">
-         <string>ТЕСТ АВАРИЯ ЧП</string>
-        </property>
-        <property name="rsn" stdset="0">
-         <number>0</number>
         </property>
        </widget>
       </item>
