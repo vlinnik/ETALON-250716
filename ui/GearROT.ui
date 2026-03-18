@@ -14,7 +14,7 @@
    <string>Управление ПИТАТЕЛЕМ</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#centralwidget,#GearROT
+   <string notr="true">#centralwidget,#GearROT,QWidget[style='container']
 {
 	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(73, 73, 73, 255), stop:1 rgba(133, 133, 133, 255));
 }
@@ -113,7 +113,10 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
 </string>
   </property>
   <property name="prefix" stdset="0">
-   <string>SIEVER</string>
+   <string/>
+  </property>
+  <property name="style" stdset="0">
+   <string>container</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="3" column="1" rowspan="3" alignment="Qt::AlignTop">

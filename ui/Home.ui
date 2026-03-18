@@ -184,7 +184,7 @@ QToolButton
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="Animation" name="valve_1">
+  <widget class="pyAnimation" name="valve_1">
    <property name="geometry">
     <rect>
      <x>620</x>
@@ -193,16 +193,16 @@ QToolButton
      <height>42</height>
     </rect>
    </property>
+   <property name="playbackHints">
+    <set>pyAnimation::Bounce</set>
+   </property>
    <property name="source">
     <url>
      <string>qrc:/valve.mng</string>
     </url>
    </property>
-   <property name="playbackHints">
-    <set>Animation::Bounce</set>
-   </property>
   </widget>
-  <widget class="Animation" name="valve_2">
+  <widget class="pyAnimation" name="valve_2">
    <property name="geometry">
     <rect>
      <x>520</x>
@@ -211,16 +211,16 @@ QToolButton
      <height>42</height>
     </rect>
    </property>
+   <property name="playbackHints">
+    <set>pyAnimation::Bounce</set>
+   </property>
    <property name="source">
     <url>
      <string>qrc:/valve.mng</string>
     </url>
    </property>
-   <property name="playbackHints">
-    <set>Animation::Bounce</set>
-   </property>
   </widget>
-  <widget class="Animation" name="noria">
+  <widget class="pyAnimation" name="noria">
    <property name="geometry">
     <rect>
      <x>1390</x>
@@ -228,6 +228,9 @@ QToolButton
      <width>164</width>
      <height>608</height>
     </rect>
+   </property>
+   <property name="playbackHints">
+    <set>pyAnimation::Ceaseless</set>
    </property>
    <property name="source">
     <url>
@@ -2733,7 +2736,7 @@ QToolButton
     </item>
    </layout>
   </widget>
-  <widget class="Animation" name="drum">
+  <widget class="pyAnimation" name="drum">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -2748,13 +2751,16 @@ QToolButton
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
+   <property name="playbackHints">
+    <set>pyAnimation::Ceaseless</set>
+   </property>
    <property name="source">
     <url>
      <string>qrc:/drum.mng</string>
     </url>
    </property>
   </widget>
-  <widget class="Animation" name="conveyor_4">
+  <widget class="pyAnimation" name="conveyor_4">
    <property name="geometry">
     <rect>
      <x>51</x>
@@ -2766,13 +2772,16 @@ QToolButton
    <property name="pixmap">
     <pixmap resource="../resources.qrc">:/vconveyor-5m.mng</pixmap>
    </property>
+   <property name="playbackHints">
+    <set>pyAnimation::Ceaseless</set>
+   </property>
    <property name="source">
     <url>
      <string>qrc:/vconveyor-5m.mng</string>
     </url>
    </property>
   </widget>
-  <widget class="Animation" name="conveyor_3">
+  <widget class="pyAnimation" name="conveyor_3">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -2787,13 +2796,16 @@ QToolButton
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
+   <property name="playbackHints">
+    <set>pyAnimation::Ceaseless</set>
+   </property>
    <property name="source">
     <url>
      <string>qrc:/conveyor-10m.mng</string>
     </url>
    </property>
   </widget>
-  <widget class="Animation" name="conveyor_2">
+  <widget class="pyAnimation" name="conveyor_2">
    <property name="geometry">
     <rect>
      <x>1240</x>
@@ -2808,13 +2820,19 @@ QToolButton
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
+   <property name="running">
+    <bool>false</bool>
+   </property>
+   <property name="playbackHints">
+    <set>pyAnimation::Ceaseless</set>
+   </property>
    <property name="source">
     <url>
      <string>qrc:/conveyor-2m.mng</string>
     </url>
    </property>
   </widget>
-  <widget class="Animation" name="conveyor_6">
+  <widget class="pyAnimation" name="conveyor_6">
    <property name="geometry">
     <rect>
      <x>750</x>
@@ -2828,6 +2846,9 @@ QToolButton
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
+   </property>
+   <property name="playbackHints">
+    <set>pyAnimation::Ceaseless</set>
    </property>
    <property name="source">
     <url>
@@ -3016,9 +3037,9 @@ QToolButton
  </widget>
  <customwidgets>
   <customwidget>
-   <class>Animation</class>
+   <class>pyAnimation</class>
    <extends>QLabel</extends>
-   <header>pygui.animation</header>
+   <header>pysca.animation</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

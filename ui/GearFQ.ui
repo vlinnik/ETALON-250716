@@ -119,7 +119,10 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
    <bool>true</bool>
   </property>
   <property name="prefix" stdset="0">
-   <string>SIEVER</string>
+   <string/>
+  </property>
+  <property name="style" stdset="0">
+   <string>content</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" colspan="2">

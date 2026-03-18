@@ -12,3 +12,4 @@ resources/exhaust_.png
 deleteLater
 resources.rcc
 debian
+*.egg-info

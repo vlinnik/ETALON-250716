@@ -34,7 +34,7 @@
             "type": "debugpy",
             "request": "launch",
             "module": "pysca.cli",
-            "args": ["--settings","settings.yaml","-w","${workspaceFolder}"],
+            "args": ["-w","${workspaceFolder}","project","run","--simulator"],
             "env" : {"PYTHONPYCACHEPREFIX":"${workspaceFolder}/__pycache__","QT_API":"pyqt6"},
             "justMyCode": false
         }
