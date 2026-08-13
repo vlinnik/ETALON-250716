@@ -1,0 +1,140 @@
+main:
+  workdir: .
+  simulator: true
+  opentsdb: 127.0.0.1
+  grafana: 127.0.0.1
+  qt_api: pyqt6
+  # grafana_key: glsa_seBJY5YcvEip7dVLnFwqSm4ULohZVAgQ_890892c0
+  grafana_key: glsa_IMb3JM7mkqdBalAMPz6lhi1rKm9JxGfT_18645892
+  # modules:
+  # - gui.__main__
+
+navbar:
+  title: 'АСУ ИННЕРЕ-250716 (c) 2025, ООО "ЭТАЛОН-КОМ"'
+  pages:
+  - Home
+  - Start
+  - Working
+  # modules:
+  # - gui.customization
+
+devices:
+- name: PLC
+  type: PYPLC
+  args:
+    device: 192.168.3.10
+    scan: 100
+
+paths:
+  workspace: .
+  plugins:
+  - .
+  forms: src/gui/data/ui
+  widgets: src/gui/data/widgets
+  logics: .
+  resources: 
+  - src/resources
+  - src
+  modules:
+    - src/gui
+    - src
+
+windows:
+- name: Home
+  ui: Home.ui
+  title: Обзор
+- name: GearFQ
+  ui: GearFQ.ui
+  template: true
+  module: gears
+- name: GearROT
+  ui: GearROT.ui
+  template: true
+  module: gears
+- name: Drum
+  ui: DRUM.ui
+  parent: Home
+  module: gears
+  args:
+    title: 'СУШИЛЬНЫЙ БАРАБАН (2)'
+- name: Noria
+  ui: GearNORI.ui
+  parent: Home
+  module: gears
+- name: Siever
+  ui: SIEVER.ui
+  parent: Home
+  module: gears
+- name: Exhauser
+  ui: EXHAUSER.ui
+  parent: Home
+  module: gears
+- name: InContainer
+  ui: INCONTAINER.ui
+  parent: Home
+  module: gears
+
+views:
+- name: Start
+  template: browser
+  title: Пуск
+  properties:
+    windowIcon: system-settings
+    url: http://localhost:3000/d/d6060b5f-3f3b-4ae6-addf-e40453461504/obzor?orgId=1&refresh=5s&kiosk
+- name: Working
+  template: browser
+  title: Работа
+  properties:
+    windowIcon: system-settings
+    url: http://localhost:3000/d/a0819563-8b3a-41fd-b0c7-20a11ed09d68/rabota?orgId=1&refresh=5s&kiosk
+- name: Conv2
+  template: GearFQ
+  show: false
+  parent: Home
+  properties:
+    windowTitle: 'Питатель (2)'
+  args:
+    title: 'ПИТАТЕЛЬ (2)'
+    prefix: 'CONVEYOR_2'
+    en: 'FQ_EN_2'
+    rot: 'FEED_ROT_2'
+- name: Conv3
+  template: GearFQ
+  show: false
+  parent: Home
+  args:
+    windowTitle: 'Питатель (3)'
+    title: 'ПИТАТЕЛЬ (3)'
+    prefix: 'CONVEYOR_3'
+    en: 'FEED_ON_3'
+    rot: 'FEED_ROT_3'
+- name: Conv4
+  template: GearROT
+  show: false
+  parent: Home
+  args:
+    windowTitle: 'Питатель (4)'
+    title: 'ПИТАТЕЛЬ (4)'
+    prefix: 'CONVEYOR_4'
+    rot: 'FEED_ROT_4'
+- name: Conv6
+  template: GearFQ
+  show: false
+  parent: Home
+  args:
+    windowTitle: 'Питатель (6)'
+    title: 'ПИТАТЕЛЬ (6)'
+    prefix: 'CONVEYOR_6'
+    en: 'FEED_ON_6'
+    rot: 'FEED_ROT_6'
+
+simulator:
+- task: master
+  exec: src/plc/krax.py
+  args:
+  - --conf
+  - src/plc/data
+
+opentsdb:
+  host: 127.0.0.1
+  port: 4242
