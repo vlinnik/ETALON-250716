@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=42", "wheel","setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "etalon-250716"
+dynamic=["version"]
+description = "Визуализация etalon-250716"
+readme = "README.md"
+requires-python = ">=3.6"
+authors = [
+    {name = "vlinnik", email = "nobody@nowhere.com"}
+]
+urls = { "Homepage" = "https://somewhere.in/" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+dependencies=["pysca"]
+
+[project.optional-dependencies]
+dev = []
+
+[project.gui-scripts]
+pysca-hmi = "gui.__main__:main"
+
+[project.entry-points."pysca.projects"] 
+gui = "gui.__main__:workdir"
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+write_to = "src/gui/_version.py"
+
+[tool.setuptools]
+include-package-data = true
+package-dir = { "" = "src"}
+packages = ["gui"]
+
+[tool.setuptools.package-data]
+gui = ["data/**/*"]
+
+[tool.setuptools.data-files]
+"share/applications" = ["etalon-250716.desktop"]
+"share/icons/hicolor/48x48/apps" = ["etalon-250716.png"]

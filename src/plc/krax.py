@@ -35,7 +35,7 @@ factory = GearChain( gears=( siever, noria,conveyor_6 , conveyor_4, conveyor_3, 
 
 instances = (in_container, siever, exhauser, noria, conveyor_6,drum_5,conveyor_4, conveyor_3,conveyor_2, factory)
 
-if platform == 'linux':
+if platform == 'linux' or True:
     from imitation import IValveOrCylinder,IRotation,IMotor,IPressure,IWeight
     ipusher_1 = IValveOrCylinder(open=hw.PUSHER_ON_1A, closed=hw.PUSHER_ON_TOP_1A)
     ipusher_2 = IValveOrCylinder(open=hw.PUSHER_ON_1B, closed=hw.PUSHER_ON_TOP_1B)

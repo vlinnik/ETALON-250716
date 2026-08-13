@@ -1,0 +1,9 @@
+[Desktop Entry]
+Exec=pysca --prefix src/gui/data/ project run gui
+Name=etalon-250716
+Type=Application
+Icon=etalon-250716.png
+Version=1.0
+Terminal=true
+Comment=АСУ etalon-250716 by vlinnik <nobody@nowhere.com>
+StartupNotify=true

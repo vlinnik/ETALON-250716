@@ -13,3 +13,4 @@ deleteLater
 resources.rcc
 debian
 *.egg-info
+dist

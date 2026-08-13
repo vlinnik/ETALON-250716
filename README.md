@@ -1,47 +1,32 @@
-# Проект АСУ PYSCA-HMI 
+# Проект АСУ etalon-250716 
 
-Проект автоматизации линии приготовления бетона 
+Проект автоматизации  
 
 - Логика управления написана для контроллера KRAX PLC-932
-- Визуализация написана на python3+PyQt5
+- Визуализация написана на python3+qtpy
 
 # Запуск
 
-## Имитация (без контроллера)
+Если запускаем из исходников, то
 
 ```
-python3 -m gui --simulator
-```
-
-## Обычный запуск
-
-Без использования ключа --device PLC предполагается на 192.168.2.10
-```
-python3 -m gui 
+PYTHONPATH=src python3 -m gui
 ```
 
 ## Зависимости
 
-AnyQt, PyQt5, pyplc, pysca, pygui
+PyQt, PyQt5/PyQt6, pysca, opentsdb-py, grafana-client и д.р.
 
+# Установка
+
+# Сборка 
 
 # Кастомные Widget на python
 
-Home.ui использует Widgets, которые сделаны на python-е. Чтобы стали доступны в панели нужно
-
-Из каталога проекта (где файлы *plugin.py)
+Чтобы widgets из src/gui/data/widgets стали доступны в панели designer нужно
 
 ```
-PYQTDESIGNERPATH=. designer
+PYSCAWIDGETSPATH=src/gui/data/widgets designer
 ```
 
-в designer должен быть установлен libpyqt5/libpyqt5 
-
-# TODO
-
-В процессе подготовки к отгрузке, при проверке работы через pysca --settings settings.yaml выявлено
-
-- неочевидно как сделать окна по шаблонам (Siever/GearROT) и чтобы можно было их использовать из Событий
-- что надо добавлять MODULE='gui' и потом gui.Siever.show()
-- что можно переопределить on_load/on_start в модуле загружаемом из settings.yaml:main->modules
-- нет общего пространства чтобы достать Home/Dashboard, которые созданы через settings.yaml:navbar->pages
+в designer должен быть установлен libpyqt5/libpyqt6 и pysca
