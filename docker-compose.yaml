@@ -6,45 +6,33 @@ services:
       - "4242:4242"
     networks:
       - monitoring
+    restart: unless-stopped
     environment:
       - TSD_HTTP_ENABLED=true
       - TSD_HTTP_PORT=4242
       - TSD_STORAGE_HBASE=true
       - TSD_STORAGE_HBASE_ZK_QUORUM=zookeeper:2181
-  # influxdb:
-  #   image: influxdb
-  #   container_name: influxdb
-  #   ports:
-  #     - "8086:8086"
-  #   networks:
-  #     - monitoring
-  #   environment:
-  #     - DOCKER_INFLUXDB_INIT_MODE=setup
-  #     - DOCKER_INFLUXDB_INIT_USERNAME=admin
-  #     - DOCKER_INFLUXDB_INIT_PASSWORD=admin123
-  #     - DOCKER_INFLUXDB_INIT_ORG=vlinnik
-  #     - DOCKER_INFLUXDB_INIT_BUCKET=default_bucket
-  #     - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=influxdb_admin_token_2025
   grafana:
-    image: grafana/grafana-oss
+    image: grafana/grafana-oss:latest
     container_name: grafana
     ports:
       - "3000:3000"
     depends_on:
       - opentsdb
-      # - influxdb
     volumes:
-      - ./provisioning:/etc/grafana/provisioning
-      - ./dashboards:/var/lib/grafana/dashboards
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
     networks:
       - monitoring
+    restart: unless-stopped
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=123456
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_ANONYMOUS_ORG_NAME=Main Org.
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer
-      - GF_USERS_DEFAULT_THEME=light      
+      - GF_USERS_DEFAULT_THEME=light    
+      - DS_OPENTSDB=opentsdb_ds  
 networks:
   monitoring:
     driver: bridge

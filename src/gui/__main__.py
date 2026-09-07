@@ -3,6 +3,7 @@ import sys
 from importlib import resources 
 
 def workdir():  #pysca использует механизм entry-points для запуска проекта, надо только знать где data
+    """ETALON-250716"""
     return resources.files( sys.modules[__name__] ).joinpath("data")
 
 #запуск проекта cli-утилитой pysca.cli
@@ -16,5 +17,4 @@ def main():
     app()
     
 if __name__=="__main__":
-    sys.argv +=["run"]
     main()

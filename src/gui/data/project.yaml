@@ -1,5 +1,5 @@
 main:
-  workdir: .
+  prefix:    src/gui/data    #установленный проект перемещен сюда, все пути должны учитывать
   simulator: true
   opentsdb: 127.0.0.1
   grafana: 127.0.0.1
@@ -17,8 +17,8 @@ navbar:
   - Home
   - Start
   - Working
-  # modules:
-  # - gui.customization
+# modules:
+#   - gui.customization
 
 devices:
 - name: PLC
@@ -33,12 +33,12 @@ paths:
   - .
   forms: src/gui/data/ui
   widgets: src/gui/data/widgets
-  logics: .
+  logics: src
   resources:
   - src/resources
-  - src
-  - src/gui
   - src/gui/data
+  - src/gui
+  - src
   modules:
   - src/gui
   - src
@@ -48,6 +48,7 @@ windows:
 - name: Home
   ui: Home.ui
   title: Обзор
+  module: home
 - name: GearFQ
   ui: GearFQ.ui
   template: true
@@ -140,7 +141,7 @@ simulator:
   exec: src/plc/krax.py
   args:
   - --conf
-  - src/plc/data/krax.json
+  - plc/data/krax.json
 
 opentsdb:
   host: 127.0.0.1

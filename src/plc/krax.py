@@ -10,6 +10,11 @@ from sys import platform
 from collections import namedtuple
 from typing import TYPE_CHECKING
 
+# try:
+#     import udhcps
+#     udhcps.start()
+# except:
+#     pass
 
 if TYPE_CHECKING: # never realy used, only for auto-completion
     PLC = namedtuple('PLC', ['IN_CONT_M_1','VIB_SCRN_M_1','VIB_SIEVE_M_9','DRUM_T_5A','DRUM_T_5B','DRUM_T_5C','FILTER_P_9','VIBR_FQ_1','FEED_FQ_2','DRUM_FQ_5','FILTER_FQ_8','SIEVE_FQ_9','EMERGENCY_2','EMERGENCY_3','EMERGENCY_4','EMERGENCY_5','EMERGENCY_6','EMERGENCY_7','FEED_ROT_2','FEED_ROT_3','FEED_ROT_4','FEED_ROT_6','NORI_ROT_7','PUSHER_ON_BOT_1A','PUSHER_ON_BOT_1B','PUSHER_ON_TOP_1A','PUSHER_ON_TOP_1B','NORI_TORN_7','FAULT_FQ_1','FAULT_FQ_2','FAULT_FQ_5','FAULT_FQ_8','FAULT_FQ_9','FEED_ISON_3','FEED_ISON_4','FEED_ISON_6','PUSHER_ON_1A','PUSHER_ON_1B','FQ_EN_1','FQ_EN_2','FEED_ON_3','FEED_ON_4','FQ_EN_5','FEED_ON_6','NORI_ON_7','FILTER_EN_8','SIEVE_EN_9','UNLOAD_OPEN_8A','UNLOAD_OPEN_8B'])
@@ -35,7 +40,7 @@ factory = GearChain( gears=( siever, noria,conveyor_6 , conveyor_4, conveyor_3, 
 
 instances = (in_container, siever, exhauser, noria, conveyor_6,drum_5,conveyor_4, conveyor_3,conveyor_2, factory)
 
-if platform == 'linux' or True:
+if platform == 'linux':
     from imitation import IValveOrCylinder,IRotation,IMotor,IPressure,IWeight
     ipusher_1 = IValveOrCylinder(open=hw.PUSHER_ON_1A, closed=hw.PUSHER_ON_TOP_1A)
     ipusher_2 = IValveOrCylinder(open=hw.PUSHER_ON_1B, closed=hw.PUSHER_ON_TOP_1B)

@@ -7,7 +7,7 @@ class Home(QWidget):
         self.iconTotal: QLabel
         self.actionReset: QAction
 
-    def setup(self):
+    def setupUi(self):
         self.iconTotal.addActions( [self.actionReset] )
         
     def on_actionReset_triggered(self):

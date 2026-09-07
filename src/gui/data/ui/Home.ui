@@ -14,7 +14,7 @@
    <string>Обзор</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources.qrc">
+   <iconset resource="../../../resources.qrc">
     <normaloff>:/go-home.png</normaloff>:/go-home.png</iconset>
   </property>
   <property name="styleSheet">
@@ -156,7 +156,7 @@ QToolButton
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources.qrc">:/in_container.png</pixmap>
+    <pixmap resource="../../../resources.qrc">:/in_container.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -178,7 +178,7 @@ QToolButton
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources.qrc">:/exhaust.png</pixmap>
+    <pixmap resource="../../../resources.qrc">:/exhaust.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -269,7 +269,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/speed.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/speed.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -338,7 +338,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/bolt.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/bolt.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -366,7 +366,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/attention.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/attention.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -394,7 +394,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/hand.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/hand.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -425,7 +425,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/locked.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/locked.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -498,7 +498,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/heavy.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/heavy.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -555,7 +555,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/heavy.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/heavy.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -612,7 +612,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/speed.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/speed.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -672,7 +672,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/sum.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/sum.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -729,7 +729,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/strength.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/strength.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -798,7 +798,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/bolt.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/bolt.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -826,7 +826,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/attention.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/attention.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -857,7 +857,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/hand.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/hand.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -888,7 +888,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/locked.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/locked.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -919,7 +919,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/too-hard.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/too-hard.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -995,7 +995,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/speed.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/speed.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1064,7 +1064,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/bolt.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/bolt.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1092,7 +1092,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/attention.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/attention.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1120,7 +1120,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/hand.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/hand.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1151,7 +1151,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/locked.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/locked.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1236,7 +1236,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/bolt.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/bolt.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1264,7 +1264,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/attention.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/attention.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1292,7 +1292,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/hand.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/hand.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1323,7 +1323,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/locked.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/locked.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1396,7 +1396,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/speed.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/speed.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1453,7 +1453,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/temperature.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/temperature.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1510,7 +1510,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/temperature.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/temperature.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1567,7 +1567,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/temperature.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/temperature.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1636,7 +1636,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/bolt.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/bolt.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1664,7 +1664,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/attention.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/attention.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1692,7 +1692,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/hand.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/hand.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1765,7 +1765,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/speed.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/speed.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1834,7 +1834,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/bolt.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/bolt.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1862,7 +1862,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/hand.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/hand.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1893,7 +1893,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/locked.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/locked.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1972,7 +1972,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/speed.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/speed.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2035,7 +2035,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/barometr.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/barometr.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2098,7 +2098,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/timer.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/timer.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2161,7 +2161,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/timer.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/timer.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2230,7 +2230,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/bolt.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/bolt.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2258,7 +2258,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/attention.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/attention.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2286,7 +2286,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/hand.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/hand.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2371,7 +2371,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/bolt.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/bolt.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2402,7 +2402,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/hand.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/hand.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2433,7 +2433,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/locked.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/locked.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2461,7 +2461,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/broken-link.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/broken-link.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2534,7 +2534,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/strength.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/strength.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2591,7 +2591,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/heavy.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/heavy.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2660,7 +2660,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/bolt.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/bolt.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2691,7 +2691,7 @@ QToolButton
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="../resources.qrc">:/attention.png</pixmap>
+          <pixmap resource="../../../resources.qrc">:/attention.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -2746,7 +2746,7 @@ QToolButton
     </rect>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources.qrc">:/drum.mng</pixmap>
+    <pixmap resource="../../../resources.qrc">:/drum.mng</pixmap>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -2770,7 +2770,7 @@ QToolButton
     </rect>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources.qrc">:/vconveyor-5m.mng</pixmap>
+    <pixmap resource="../../../resources.qrc">:/vconveyor-5m.mng</pixmap>
    </property>
    <property name="playbackHints">
     <set>pyAnimation::Ceaseless</set>
@@ -2791,7 +2791,7 @@ QToolButton
     </rect>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources.qrc">:/conveyor-10m.mng</pixmap>
+    <pixmap resource="../../../resources.qrc">:/conveyor-10m.mng</pixmap>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -2815,7 +2815,7 @@ QToolButton
     </rect>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources.qrc">:/conveyor-2m.mng</pixmap>
+    <pixmap resource="../../../resources.qrc">:/conveyor-2m.mng</pixmap>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -2842,7 +2842,7 @@ QToolButton
     </rect>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources.qrc">:/conveyor-5m.mng</pixmap>
+    <pixmap resource="../../../resources.qrc">:/conveyor-5m.mng</pixmap>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -2872,7 +2872,7 @@ QToolButton
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources.qrc">:/siever.png</pixmap>
+    <pixmap resource="../../../resources.qrc">:/siever.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -2891,7 +2891,7 @@ QToolButton
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources.qrc">:/green-led.png</pixmap>
+    <pixmap resource="../../../resources.qrc">:/green-led.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="pusher_2">
@@ -2907,7 +2907,7 @@ QToolButton
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources.qrc">:/green-led.png</pixmap>
+    <pixmap resource="../../../resources.qrc">:/green-led.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="pusher_above_1">
@@ -2923,7 +2923,7 @@ QToolButton
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources.qrc">:/red-led.png</pixmap>
+    <pixmap resource="../../../resources.qrc">:/red-led.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="pusher_above_2">
@@ -2939,7 +2939,7 @@ QToolButton
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../resources.qrc">:/red-led.png</pixmap>
+    <pixmap resource="../../../resources.qrc">:/red-led.png</pixmap>
    </property>
   </widget>
   <widget class="QPushButton" name="start">
@@ -3044,6 +3044,7 @@ QToolButton
   </customwidget>
  </customwidgets>
  <resources>
+  <include location="../../../resources.qrc"/>
   <include location="../resources.qrc"/>
  </resources>
  <connections/>

@@ -30,3 +30,10 @@ PYSCAWIDGETSPATH=src/gui/data/widgets designer
 ```
 
 в designer должен быть установлен libpyqt5/libpyqt6 и pysca
+
+# Пост настройка Grafana
+
+- Не менять Main Org.
+- изменить defaults.ini в контейнере grafana (auth.anonymous.enabled = true)
+- выполнить dashboard share external и эти ссылки должны быть в project.yaml 
+- dashboard экспортирую, он ссылается на ${DS_OPENTSDB} как Datasource, заменить на opentsdb_ds (uid from grafana/datasources/datasource.yaml)

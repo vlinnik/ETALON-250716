@@ -1,10 +1,17 @@
 apiVersion: 1
 
 providers:
-  - name: 'default'
+  - name: 'START'
     folder: 'Шаблоны'
     type: file
     disableDeletion: false
     editable: true
     options:
-      path: /var/lib/grafana/dashboards/overview.json
+      path: /var/lib/grafana/dashboards/start.json
+  - name: 'WORK'
+    folder: 'Шаблоны'
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards/working.json
