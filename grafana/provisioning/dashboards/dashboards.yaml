@@ -6,6 +6,7 @@ providers:
     type: file
     disableDeletion: false
     editable: true
+    uid: start
     options:
       path: /var/lib/grafana/dashboards/start.json
   - name: 'WORK'
@@ -13,5 +14,6 @@ providers:
     type: file
     disableDeletion: false
     editable: true
+    uid: working
     options:
       path: /var/lib/grafana/dashboards/working.json

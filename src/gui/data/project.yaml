@@ -87,14 +87,14 @@ views:
   properties:
     windowIcon: system-settings
     url: 
-      http://localhost:3000/d/d6060b5f-3f3b-4ae6-addf-e40453461504/obzor?orgId=1&refresh=5s&kiosk
+      http://localhost:3000/d/start/pusk?orgId=1&refresh=5s&kiosk
 - name: Working
   template: browser
   title: Работа
   properties:
     windowIcon: system-settings
     url: 
-      http://localhost:3000/d/a0819563-8b3a-41fd-b0c7-20a11ed09d68/rabota?orgId=1&refresh=5s&kiosk
+      http://localhost:3000/d/working/rabota?orgId=1&refresh=5s&kiosk
 - name: Conv2
   template: GearFQ
   show: false

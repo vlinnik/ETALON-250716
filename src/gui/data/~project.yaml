@@ -17,6 +17,7 @@ navbar:
   - Home
   - Start
   - Working
+  - Test
 # modules:
 #   - gui.customization
 
@@ -87,14 +88,21 @@ views:
   properties:
     windowIcon: system-settings
     url: 
-      http://localhost:3000/d/start/pusk?orgId=1&refresh=5s&kiosk
+      http://localhost:3000/d/start/pusk?orgId=1&from=now-1h&to=now&timezone=browser&refresh=auto&kiosk=true
 - name: Working
   template: browser
   title: Работа
   properties:
     windowIcon: system-settings
     url: 
-      http://localhost:3000/d/working/rabota?orgId=1&refresh=5s&kiosk
+      http://localhost:3000/d/working/rabota?orgId=1&from=now-6h&to=now&timezone=browser&refresh=auto&kiosk=true
+- name: Test
+  template: browser
+  title: TEST
+  properties:
+    windowIcon: system-settings
+    url: 
+      http://localhost:3000/
 - name: Conv2
   template: GearFQ
   show: false
